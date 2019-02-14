@@ -13,8 +13,9 @@
 <input type="checkbox" name="WinRar" value="1" class="checkbox"> Winrar
 <img src="Winrar.jpg" width="20" height="17"> <br>
 <input type="checkbox" name="Steam" value="1" class="checkbox" >  Steam
-<img src="Winrar.jpg" width="20" height="17" > <br>
+<img src="Steam.jpg" width="20" height="17" > <br>
 <input type="checkbox" name="Discord" value="1" class="checkbox" >  Discord
+<img src="Discord.jpg" width="20" height="17" > <br>
 
 
 
@@ -27,7 +28,7 @@
 
 <?php
 
-echo "Find-Packageprovider -name Chocolatey -Force <br>";
+$All = "@\"%SystemRoot%\System32\WindowsPowerShell\\v1.0\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex ((New-Object System.Net.WebClient).DownloadString(\'https://chocolatey.org/install.ps1\'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin\"";
 
 if ($_POST['WinRar'] == '1') {
 	$WinRar = "Install-Package Winrar -provider Chocolatey -Force";
@@ -40,11 +41,32 @@ if ($_POST['Discord'] == '1') {
     $Discord = "Install-Package Discord -provider Chocolatey -Force";}
 
 
-$file = fopen('autoinstall.bat', 'w');
-fwrite($file,$WinRar);
+$file = fopen("autoinstall.bat","w");
+fwrite($file,"$All
+$WinRar
+$Steam
+$Discord
+
+
+
+
+
+
+
+");
 fclose($file);
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		
 		
