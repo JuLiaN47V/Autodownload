@@ -2,8 +2,10 @@
 
 
 
-choco install googlechrome -y --Force
 
+
+
+choco install Programm -y --Force
 
 
 

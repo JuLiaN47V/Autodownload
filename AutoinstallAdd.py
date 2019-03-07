@@ -29,8 +29,8 @@ def retrieve_input():
 		f.write(str(Count))
 		f.close()
 		LeftBox = 515
-		LeftText = LeftBox + 50
-		LeftBild = LeftText + 44
+		LeftText = LeftBox + 35
+		LeftBild = LeftText + 42
 
 	elif List == "Web":
 		f = open("WebCount.txt", "r")
@@ -44,16 +44,35 @@ def retrieve_input():
 		f.write(str(Count))
 		f.close()
 		LeftBox = 100
-		LeftText = LeftBox + 50
-		LeftBild = LeftText + 44
+		LeftText = LeftBox + 35
+		LeftBild = LeftText - 45
 		
 	
 	
 	c = open("index.html", "a")
-	c.write("\n<style type='text/css'>\nhtml, body {\nwidth: 100%;\nheight: 100%;\nmargin: 0px;\n}\nbody {\nbackground-color: transparent;\ntransform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\ntransform-style: preserve-3d;\n}\n." + name + " {\nposition: absolute;\nfloat: left;\nmargin: 0 0 0 17px;\nwidth: 15px;\nheight: 15px;\nleft: " + str(LeftBox) + "px;\ntop: " + str(Hoch) +"px;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"px;\ntop: " + str(Hoch) + "px;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 25px;\nheight: 25px;\ntransform-origin: 21.5px 22.5961px 0px;\nleft: "+ str(LeftBild) +"px;\n top: " + str(Hoch) + "px;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n\n<form method=\"POST\" action=\"Download.php\">\n<input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n</form>")
+	c.write("\n<style type='text/css'>\nhtml, body {\nwidth: 100%;\nheight: 100%;\nmargin: 0px;\n}\nbody {\nbackground-color: transparent;\ntransform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\ntransform-style: preserve-3d;\n}\n." + name + " {\nposition: absolute;\nfloat: left;\nmargin: 0 0 0 17px;\nwidth: 15px;\nheight: 15px;\nleft: " + str(LeftBox) + "px;\ntop: " + str(Hoch) +"px;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"px;\ntop: " + str(Hoch) + "px;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 15px;\nheight: 15px;\ntransform-origin: 21.5px 22.5961px 0px;\nleft: "+ str(LeftBild) +"px;\n top: " + str(Hoch) + "px;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n")
 	c.close()
 	
-	
+	with open('Download.php', 'r') as f:
+		file_contents = f.readlines()
+
+	print(file_contents)
+	file_contents.insert(3, "\nif ($_POST[\'"+ name +"\'] == \'1\') {\n    $"+ name +" = \"choco install "+ Program +" -y --Force\";}\n")
+	print(file_contents)
+
+	with open('Download.php', 'w') as f:
+		f.writelines(file_contents)
+		
+	with open('index.html', 'r') as f:
+		file_contents = f.readlines()
+
+	print(file_contents)
+	file_contents.insert(180, "<input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n")
+	print(file_contents)
+
+	with open('index.html', 'w') as f:
+		f.writelines(file_contents)
+
 
 
 
