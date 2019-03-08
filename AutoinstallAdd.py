@@ -44,13 +44,13 @@ def retrieve_input():
 		f.write(str(Count))
 		f.close()
 		LeftBox = 100
-		LeftText = LeftBox + 35
+		LeftText = LeftBox + 33
 		LeftBild = LeftText - 45
 		
 	
 	
 	c = open("index.html", "a")
-	c.write("\n<style type='text/css'>\nhtml, body {\nwidth: 100%;\nheight: 100%;\nmargin: 0px;\n}\nbody {\nbackground-color: transparent;\ntransform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\ntransform-style: preserve-3d;\n}\n." + name + " {\nposition: absolute;\nfloat: left;\nmargin: 0 0 0 17px;\nwidth: 15px;\nheight: 15px;\nleft: " + str(LeftBox) + "px;\ntop: " + str(Hoch) +"px;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"px;\ntop: " + str(Hoch) + "px;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 15px;\nheight: 15px;\ntransform-origin: 21.5px 22.5961px 0px;\nleft: "+ str(LeftBild) +"px;\n top: " + str(Hoch) + "px;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n")
+	c.write("\n<style type='text/css'>\nhtml, body {\nwidth: 100%;\nheight: 100%;\nmargin: 0px;\n}\nbody {\nbackground-color: transparent;\ntransform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\ntransform-style: preserve-3d;\n}\n." + name + " {\nposition: absolute;\nfloat: left;\nmargin: 0 0 0 17px;\nwidth: 17px;\nheight: 17px;\nleft: " + str(LeftBox) + "px;\ntop: " + str(Hoch) +"px;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"px;\ntop: " + str(Hoch) + "px;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 15px;\nheight: 15px;\ntransform-origin: 21.5px 22.5961px 0px;\nleft: "+ str(LeftBild) +"px;\n top: " + str(Hoch) + "px;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n")
 	c.close()
 	
 	with open('Download.php', 'r') as f:
