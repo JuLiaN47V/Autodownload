@@ -67,13 +67,22 @@ def retrieve_input():
 		file_contents = f.readlines()
 
 	print(file_contents)
-	file_contents.insert(180, "<input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n")
+	file_contents.insert(198, "    <input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n")
 	print(file_contents)
 
 	with open('index.html', 'w') as f:
 		f.writelines(file_contents)
+	
+	
+	with open('Download.php', 'r') as f:
+		file_contents = f.readlines()
 
+	print(file_contents)
+	file_contents.insert(200, "$"+ name +"")
+	print(file_contents)
 
+	with open('Download.php', 'w') as f:
+		f.writelines(file_contents)
 
 
 
