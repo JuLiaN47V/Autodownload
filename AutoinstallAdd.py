@@ -182,7 +182,7 @@ def retrieve_input():
 		file_contents = f.readlines()
 
 	print(file_contents)
-	file_contents.insert(3, "\nif ($_POST[\'"+ name +"\'] == \'1\') {\n    $"+ name +" = \"choco install "+ Program +" -y --Force\";}\n")
+	file_contents.insert(5, "\nif ($_POST[\'"+ name +"\'] == \'1\') {\n    $"+ name +" = \"choco install "+ Program +" -y --Force\";}\n")
 	print(file_contents)
 
 	with open('Download.php', 'w') as f:

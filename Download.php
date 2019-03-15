@@ -1,11 +1,13 @@
 <?php
 
+$Admin = "@echo off\n>nul 2>&1 \"%SYSTEMROOT%\system32\cacls.exe\" \"%SYSTEMROOT%\system32\config\system\"\nif \'%errorlevel%\' NEQ \'0\' (\n    echo Requesting administrative privileges...\n    goto UACPrompt\n) else ( goto gotAdmin )\n:UACPrompt\n    echo Set UAC = CreateObject^(\"Shell.Application\"^) > \"%temp%\getadmin.vbs\"\n    echo UAC.ShellExecute \"%~s0\", \"\", \"\", \"runas\", 1 >> \"%temp%\getadmin.vbs\"\n\n    \"%temp%\getadmin.vbs\"\n    exit /B\n\n:gotAdmin\n    if exist \"%temp%\getadmin.vbs\" ( del \"%temp%\getadmin.vbs\" )\n    pushd \"%CD%\"\n    CD /D \"%~dp0\"\n@echo off\n";                                                                                      
 $All = "@\"%SystemRoot%\System32\WindowsPowerShell\\v1.0\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin\"";
 
+
+
 $file = fopen("autoinstall.bat","w");
-fwrite($file,"$All
-
-
+fwrite($file,"$Admin
+$All
 
 
 
