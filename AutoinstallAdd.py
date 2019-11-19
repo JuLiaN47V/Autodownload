@@ -29,7 +29,7 @@ def retrieve_input():
 		f = open("CompressonCount.txt", "w")
 		f.write(str(Count))
 		f.close()
-		LeftBox = 10
+		LeftBox = 9.2
 		LeftText = LeftBox + 2
 		LeftBild = LeftText - 3.1
 
@@ -37,6 +37,8 @@ def retrieve_input():
 		f = open("WebCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -51,6 +53,8 @@ def retrieve_input():
 		f = open("VideoCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -65,6 +69,8 @@ def retrieve_input():
 		f = open("ImagingCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -79,6 +85,8 @@ def retrieve_input():
 		f = open("AudioCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -93,6 +101,8 @@ def retrieve_input():
 		f = open("DeveloperCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -106,7 +116,9 @@ def retrieve_input():
 	elif List == "Text":
 		f = open("TextCount.txt", "r")
 		Input = int(f.read())
-		Hoch = Input + 85
+		Hoch = Input + 95
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -120,7 +132,9 @@ def retrieve_input():
 	elif List == "Gaming":
 		f = open("GamingCount.txt", "r")
 		Input = int(f.read())
-		Hoch = Input + 85
+		Hoch = Input + 95
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -134,7 +148,9 @@ def retrieve_input():
 	elif List == "Security":
 		f = open("SecurityCount.txt", "r")
 		Input = int(f.read())
-		Hoch = Input + 85
+		Hoch = Input + 95
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -148,7 +164,9 @@ def retrieve_input():
 	elif List == "Messaging":
 		f = open("MessagingCount.txt", "r")
 		Input = int(f.read())
-		Hoch = Input + 85
+		Hoch = Input + 95
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -162,7 +180,9 @@ def retrieve_input():
 	elif List == "Others":
 		f = open("OthersCount.txt", "r")
 		Input = int(f.read())
-		Hoch = Input + 85
+		Hoch = Input + 95
+		HochBild = Hoch - 0.3
+		HochText = Hoch + 0.4
 		Count = Input + 3
 		f.close()
 		
@@ -175,7 +195,7 @@ def retrieve_input():
 	
 	
 	c = open("index.html", "a")
-	c.write("\n<style type='text/css'>\nhtml, body {\nwidth: 100%;\nheight: 100%;\n}\nbody {\nbackground-color: transparent;\ntransform-style: preserve-3d;\n}\n." + name + " {\nposition: absolute;\nfloat: left;\nwidth: 2%;\nheight: 2%;\nleft: " + str(LeftBox) + "%;\ntop: " + str(Hoch) +"%;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"%;\ntop: " + str(HochText) + "%;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 1.5%;\nheight: 3%;\nleft: "+ str(LeftBild) +"%;\n top: " + str(HochBild) + "%;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n")
+	c.write("\n<style type='text/css'>\n." + name + " {\nposition: absolute;\nfloat: left;\nwidth: 2%;\nheight: 2%;\nleft: " + str(LeftBox) + "%;\ntop: " + str(Hoch) +"%;\n}\n." + name + "Text{\nposition: absolute;\nleft: "+ str(LeftText) +"%;\ntop: " + str(HochText) + "%;\nfont-family: Georgia;\n}\n." + name + "Bild {\nposition: absolute;\nwidth: 1.5%;\nheight: 3%;\nleft: "+ str(LeftBild) +"%;\n top:" + str(HochBild) + "%;\n}\n</style>\n\n<body class=\"htmlNoPages\">\n<p class=\""+ name +"Text\">"+ name +"</p>\n<img src=\""+ name +".jpg\" class=\""+ name +"Bild\">\n</body>\n")
 	c.close() 
 	
 	with open('Download.php', 'r') as f:
@@ -192,7 +212,7 @@ def retrieve_input():
 		file_contents = f.readlines()
 
 	print(file_contents)
-	file_contents.insert(224, "<input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n")
+	file_contents.insert(265, "<input type=\"checkbox\" name=\""+ name +"\" value=\"1\" class=\""+ name +"\">\n")
 	print(file_contents)
 
 	with open('index.html', 'w') as f:
@@ -251,7 +271,7 @@ def retrieve_input():
 textBox=Text(top, height=1, width=20)
 textBox.pack()
 
-CProgram = Label(top,text = 'Anzeige Name')
+CProgram = Label(top,text = 'Anzeige Name\n(niemals Zahlen oder Leerzeichen)')
 CProgram.pack()
 
 NamenFeld=Text(top, height=1, width=20)
