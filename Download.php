@@ -4,6 +4,12 @@ $Admin = "@echo off\n>nul 2>&1 \"%SYSTEMROOT%\system32\cacls.exe\" \"%SYSTEMROOT
 $All = "if exist %programdata%\chocolatey ( echo found ) ELSE (powershell -command \"Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\")";
 
 
+if ($_POST['abc'] == '1') {
+    $abc = "choco install abc -y --Force";}
+
+if ($_POST['test'] == '1') {
+    $test = "choco install test -y --Force";}
+
 if ($_POST['office'] == '1') {
     $office = "choco install office -y --Force";}
 
@@ -192,10 +198,10 @@ $All
 
 
 
+$abc
 
 
-
-
+$test
 
 
 $office

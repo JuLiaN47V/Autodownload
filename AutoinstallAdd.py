@@ -18,7 +18,7 @@ def retrieve_input():
 	name = NamenFeld.get("1.0","end-1c")
 	print(Program)
 	if List == "Compresson":
-		f = open("CompressonCount.txt", "r")
+		f = open("counterfiles/CompressonCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -26,7 +26,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("CompressonCount.txt", "w")
+		f = open("counterfiles/CompressonCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 9.2
@@ -34,7 +34,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 
 	elif List == "Web":
-		f = open("WebCount.txt", "r")
+		f = open("counterfiles/WebCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -42,7 +42,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("WebCount.txt", "w")
+		f = open("counterfiles/WebCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 24
@@ -50,7 +50,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 	
 	elif List == "Video":
-		f = open("VideoCount.txt", "r")
+		f = open("counterfiles/VideoCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -58,7 +58,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("VideoCount.txt", "w")
+		f = open("counterfiles/VideoCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 36.5
@@ -66,7 +66,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Imaging":
-		f = open("ImagingCount.txt", "r")
+		f = open("counterfiles/ImagingCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -74,7 +74,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("ImagingCount.txt", "w")
+		f = open("counterfiles/ImagingCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 49.3
@@ -82,7 +82,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Audio":
-		f = open("AudioCount.txt", "r")
+		f = open("counterfiles/AudioCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -90,7 +90,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("AudioCount.txt", "w")
+		f = open("counterfiles/AudioCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 64.9
@@ -98,7 +98,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Developer":
-		f = open("DeveloperCount.txt", "r")
+		f = open("counterfiles/DeveloperCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 34.7
 		HochBild = Hoch - 0.3
@@ -106,7 +106,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("DeveloperCount.txt", "w")
+		f = open("counterfiles/DeveloperCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 79.5
@@ -114,7 +114,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Text":
-		f = open("TextCount.txt", "r")
+		f = open("counterfiles/TextCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 95
 		HochBild = Hoch - 0.3
@@ -122,7 +122,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("TextCount.txt", "w")
+		f = open("counterfiles/TextCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 9.2
@@ -130,7 +130,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Gaming":
-		f = open("GamingCount.txt", "r")
+		f = open("counterfiles/GamingCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 95
 		HochBild = Hoch - 0.3
@@ -138,7 +138,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("GamingCount.txt", "w")
+		f = open("counterfiles/GamingCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 23.5
@@ -146,7 +146,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Security":
-		f = open("SecurityCount.txt", "r")
+		f = open("counterfiles/SecurityCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 95
 		HochBild = Hoch - 0.3
@@ -154,7 +154,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("SecurityCount.txt", "w")
+		f = open("counterfiles/SecurityCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 39.5
@@ -162,7 +162,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Messaging":
-		f = open("MessagingCount.txt", "r")
+		f = open("counterfiles/MessagingCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 95
 		HochBild = Hoch - 0.3
@@ -170,7 +170,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("MessagingCount.txt", "w")
+		f = open("counterfiles/MessagingCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 56.5
@@ -178,7 +178,7 @@ def retrieve_input():
 		LeftBild = LeftText - 3.1
 		
 	elif List == "Others":
-		f = open("OthersCount.txt", "r")
+		f = open("counterfiles/OthersCount.txt", "r")
 		Input = int(f.read())
 		Hoch = Input + 95
 		HochBild = Hoch - 0.3
@@ -186,7 +186,7 @@ def retrieve_input():
 		Count = Input + 3
 		f.close()
 		
-		f = open("OthersCount.txt", "w")
+		f = open("counterfiles/OthersCount.txt", "w")
 		f.write(str(Count))
 		f.close()
 		LeftBox = 76.5
